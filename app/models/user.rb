@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :job_alerts
   has_many :connection_jobs
+  belongs_to :job_categorie
 end

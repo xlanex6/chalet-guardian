@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160908130518) do
+ActiveRecord::Schema.define(version: 20160910122243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,7 +64,17 @@ ActiveRecord::Schema.define(version: 20160908130518) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone"
+    t.string   "company"
+    t.string   "website"
+    t.text     "description"
+    t.datetime "available_start_time"
+    t.datetime "available_end_time"
+    t.integer  "job_categorie_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["job_categorie_id"], name: "index_users_on_job_categorie_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
@@ -73,4 +83,5 @@ ActiveRecord::Schema.define(version: 20160908130518) do
   add_foreign_key "job_alerts", "job_categories", column: "job_categorie_id"
   add_foreign_key "job_alerts", "ski_resorts"
   add_foreign_key "job_alerts", "users"
+  add_foreign_key "users", "job_categories", column: "job_categorie_id"
 end
