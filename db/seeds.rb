@@ -60,7 +60,7 @@ puts " Job Alert Creation..."
       end_date: Faker::Date.forward(duration) + start_rand,
       address: "#{Faker::Address.fr_street_name}, #{ski_resort.name}",
       ski_resort: ski_resort,
-      photo: "http://placehold.it/350x150",
+      photo: nil,
       description:"Lorem ipsum dolor sit met, connecteur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a liqua. Ut enim ad minim venom, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea comido consequat. Luis aute irure dolor in reprehenderit in voluptate relit esse cillim dolore eu fuggita nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animé id est labour."
     )
   end
