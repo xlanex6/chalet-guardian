@@ -9,7 +9,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise', github: 'plataformatec/devise'
 gem 'redis'
 
-gem 'rails_12factor', group: :production
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -24,6 +23,10 @@ gem 'cloudinary', '1.1.0'
 gem "attachinary", github: "assembler/attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'binding_of_caller'
