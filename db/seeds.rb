@@ -76,7 +76,7 @@ puts "Creation  COMPLETE & SUCCEED"
 
 ##################################################################
 
-5.times do
+3.times do
   puts "|"
 end
 puts "SEED SUCCEED - Enjoy ;)"
