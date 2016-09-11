@@ -1,3 +1,3 @@
-$(document).ready(fonction() {
+$(document).ready(function() {
   $('.attachinary-input').attachinary();
 });
