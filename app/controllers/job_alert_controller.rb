@@ -1,0 +1,3 @@
+class  JobAlertController < ApplicationController
+  
+end

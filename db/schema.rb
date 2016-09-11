@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160911092819) do
+ActiveRecord::Schema.define(version: 20160911094350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 20160911092819) do
     t.integer  "ski_resort_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "photo"
+    t.text     "description"
     t.index ["job_categorie_id"], name: "index_job_alerts_on_job_categorie_id", using: :btree
     t.index ["ski_resort_id"], name: "index_job_alerts_on_ski_resort_id", using: :btree
     t.index ["user_id"], name: "index_job_alerts_on_user_id", using: :btree
