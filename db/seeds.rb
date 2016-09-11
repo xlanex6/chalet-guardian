@@ -58,7 +58,7 @@ puts " Job Alert Creation..."
       user: User.first,
       start_date: Faker::Date.forward(start_rand),
       end_date: Faker::Date.forward(duration) + start_rand,
-      address: "34 rue de la république, #{ski_resort.name}",
+      address: "#{Faker::Address.fr_street_name}, #{ski_resort.name}",
       ski_resort: ski_resort,
     )
   end
