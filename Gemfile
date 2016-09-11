@@ -17,6 +17,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'faker'
+gem "faker_extension_fr"
 
 group :development, :test do
   gem 'binding_of_caller'
