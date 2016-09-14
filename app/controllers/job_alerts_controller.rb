@@ -12,15 +12,13 @@ class  JobAlertsController < ApplicationController
 
   def new
     @job_alert = JobAlert.new
-    @job_categories = JobCategorie.all
-    @ski_resorts = SkiResort.all
   end
 
   def create
     @job_alert = JobAlert.new(job_alert_params)
     @job_alert.user = current_user
     if @job_alert.save
-      redirect_to @job_alert, notice: "YYour job has been successfully posted !"
+      redirect_to @job_alert, notice: "Your job has been successfully posted !"
     else
       render :new
     end
