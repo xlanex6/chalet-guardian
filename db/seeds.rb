@@ -22,28 +22,6 @@ puts "Creation Ski Resort COMPLETE & SUCCEED"
 
 
 
-
-##############       JOB ALERT    ###############################
-puts "Destoy  Job Alert"
-  JobAlert.destroy_all
-puts " Job Alert Creation..."
-  50.times do
-    start_rand = rand(23..60)
-    duration = rand(70..123)
-    ski_resort = SkiResort.all.sample
-    JobAlert.create(
-      job_categorie: JobCategorie.all.sample,
-      user: User.first,
-      start_date: Faker::Date.forward(start_rand),
-      end_date: Faker::Date.forward(duration) + start_rand,
-      address: "#{Faker::Address.street_address}, #{ski_resort.name}",
-      ski_resort: ski_resort,
-      photo: nil,
-      description:"Lorem ipsum dolor sit met, connecteur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a liqua. Ut enim ad minim venom, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea comido consequat. Luis aute irure dolor in reprehenderit in voluptate relit esse cillim dolore eu fuggita nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animé id est labour."
-    )
-  end
-puts "Job Alert Creation  COMPLETE & SUCCEED"
-
 ##############      USER   ###############################
 puts "Destoy ALL User"
 User.destroy_all
@@ -66,6 +44,28 @@ puts "User Creation..."
 end
 
 puts "Creation  COMPLETE & SUCCEED"
+
+##############       JOB ALERT    ###############################
+puts "Destoy  Job Alert"
+  JobAlert.destroy_all
+puts " Job Alert Creation..."
+  50.times do
+    start_rand = rand(23..60)
+    duration = rand(70..123)
+    ski_resort = SkiResort.all.sample
+    JobAlert.create(
+      job_categorie: JobCategorie.all.sample,
+      user: User.first,
+      start_date: Faker::Date.forward(start_rand),
+      end_date: Faker::Date.forward(duration) + start_rand,
+      address: "#{Faker::Address.street_address}, #{ski_resort.name}",
+      ski_resort: ski_resort,
+      photo: nil,
+      description:"Lorem ipsum dolor sit met, connecteur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a liqua. Ut enim ad minim venom, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea comido consequat. Luis aute irure dolor in reprehenderit in voluptate relit esse cillim dolore eu fuggita nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animé id est labour."
+    )
+  end
+puts "Job Alert Creation  COMPLETE & SUCCEED"
+
 
 ##############    CONNECTION JOB    ###############################
 puts "Destoy "
