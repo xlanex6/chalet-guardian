@@ -3,7 +3,7 @@ class  JobAlertsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @job_alerts = JobAlert.all
+    @job_alerts = policy_scope(JobAlert)
   end
 
   def show
@@ -12,11 +12,12 @@ class  JobAlertsController < ApplicationController
 
   def new
     @job_alert = JobAlert.new
+    authorize @job_alert
   end
 
   def create
-    @job_alert = JobAlert.new(job_alert_params)
-    @job_alert.user = current_user
+    @job_alert = current_user.job_alerts.build(job_alert_params)
+    authorize @job_alert
     if @job_alert.save
       redirect_to @job_alert, notice: "Your job has been successfully posted !"
     else
@@ -34,6 +35,7 @@ class  JobAlertsController < ApplicationController
 
   def set_job_alert
     @job_alert = JobAlert.find(params[:id])
+    authorize @job_alert
   end
 
   def job_alert_params
