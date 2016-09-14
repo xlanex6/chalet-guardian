@@ -5,7 +5,7 @@
       <p><%= job_alert.user.company %></p>
       <p><%= job_alert.ski_resort.name %></p>
       <p><%= job_alert.description %></p>
-      <%= link_to 'All details', job_alert_path(job_alert) %>
+      <%= link_to 'All details', job_alert_path(job_alert), class: "btn btn-primary btn-xl" %>
       <hr>
     <% end %>
   </div>
