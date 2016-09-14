@@ -1,10 +1,12 @@
 <div class="container">
   <div class="row">
     <%= simple_form_for @job_alert, url: job_alerts_path , method: :post do |f|%>
-      <%= f.input :job_categorie, collection: @job_categories %>
+      <%= f.input :job_categorie_id, collection: @job_categories %>
+      <%= f.input :ski_resort_id, collection: @ski_resorts %>
       <%= f.input :address %>
-      <%= f.input :ski_resort, collection: @ski_resorts %>
       <%= f.input :description %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
       <%= f.input :photo, as: :attachinary %>
       <%= f.button :submit %>
     <% end %>

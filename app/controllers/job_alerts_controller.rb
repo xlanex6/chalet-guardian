@@ -17,10 +17,10 @@ class  JobAlertsController < ApplicationController
   end
 
   def create
-    @job_alert = JobAlert.new(params[:job_alert_params])
+    @job_alert = JobAlert.new(job_alert_params)
     @job_alert.user = current_user
     if @job_alert.save
-      redirect_to @job_alert, notice: "your JobAlert have been add SUCCEFULLY"
+      redirect_to @job_alert, notice: "YYour job has been successfully posted !"
     else
       render :new
     end
@@ -39,6 +39,6 @@ class  JobAlertsController < ApplicationController
   end
 
   def job_alert_params
-    params.require(:job_alert).permit(:job_categorie,:start_date,:end_date,:address,:ski_resort,:photo,:description)
+    params.require(:job_alert).permit(:job_categorie_id,:start_date,:end_date,:address,:ski_resort_id,:photo,:description)
   end
 end
