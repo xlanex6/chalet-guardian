@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160911143022) do
+ActiveRecord::Schema.define(version: 20160914083557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20160911143022) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
+  end
+
+  create_table "availabilities", force: :cascade do |t|
+    t.datetime "available_start_time"
+    t.datetime "available_end_time"
+    t.integer  "user_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["user_id"], name: "index_availabilities_on_user_id", using: :btree
   end
 
   create_table "connection_jobs", force: :cascade do |t|
@@ -87,8 +96,6 @@ ActiveRecord::Schema.define(version: 20160911143022) do
     t.string   "company"
     t.string   "website"
     t.text     "description"
-    t.datetime "available_start_time"
-    t.datetime "available_end_time"
     t.integer  "job_categorie_id"
     t.string   "uid"
     t.string   "provider"
@@ -100,6 +107,7 @@ ActiveRecord::Schema.define(version: 20160911143022) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "availabilities", "users"
   add_foreign_key "connection_jobs", "job_alerts"
   add_foreign_key "connection_jobs", "users"
   add_foreign_key "job_alerts", "job_categories", column: "job_categorie_id"
