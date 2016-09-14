@@ -22,8 +22,8 @@ puts "Creation Ski Resort COMPLETE & SUCCEED"
 
 
 ##############      USER   ###############################
-puts "Destoy ALL User"
-  User.destroy_all
+# puts "Destoy ALL User"
+#   User.destroy_all
 puts "User Creation..."
   10.times do
     jobcat = JobCategorie.all.sample
@@ -46,8 +46,8 @@ puts "Creation  COMPLETE & SUCCEED"
 
 
 ##############       JOB ALERT    ###############################
-puts "Destoy  Job Alert"
-  JobAlert.destroy_all
+# puts "Destoy  Job Alert"
+#   JobAlert.destroy_all
 puts " Job Alert Creation..."
   50.times do
     start_rand = rand(23..60)
