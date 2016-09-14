@@ -24,6 +24,7 @@ gem "jquery-fileupload-rails"
 gem "coffee-rails"
 gem 'omniauth'
 gem 'omniauth-linkedin'
+gem 'pundit'
 
 group :production do
   gem 'rails_12factor'
