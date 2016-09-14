@@ -25,6 +25,8 @@ gem "coffee-rails"
 gem 'omniauth'
 gem 'omniauth-linkedin'
 gem 'pundit'
+gem 'momentjs-rails'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.42'
 
 group :production do
   gem 'rails_12factor'
