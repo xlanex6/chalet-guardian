@@ -25,6 +25,7 @@ gem "coffee-rails"
 gem 'omniauth'
 gem 'omniauth-linkedin'
 gem 'pundit'
+gem 'bootstrap-datepicker-rails'
 
 group :production do
   gem 'rails_12factor'
