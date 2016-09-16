@@ -9,9 +9,11 @@
 //= require_tree .
 
 
-$(function() {
-    $('input.datepicker').data({behaviour: "datepicker"}).datepicker();
+$('input.datepicker').datepicker({
+    format: "dd/mm/yyyy"
 });
+
+
 
 
 $('.timestring').each(function() {
