@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <% @job_alerts.each do |job_alert| %>
-      <p><%= job_alert.job_categorie.name %></p>
+      <h3><%= job_alert.job_categorie.name %></h3>
       <p><em>from</em> <%= job_alert.user.company %></p>
-      <p><%= job_alert.ski_resort.name %></p>
+      <p><em><%= job_alert.ski_resort.name %></em></p>
       <p><%= job_alert.description %></p>
       <%= link_to 'All details', job_alert_path(job_alert), class: "btn btn-primary btn-xl" %>
       <hr>
