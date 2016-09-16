@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914083557) do
+ActiveRecord::Schema.define(version: 20160916085730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20160914083557) do
   end
 
   create_table "availabilities", force: :cascade do |t|
-    t.datetime "available_start_time"
-    t.datetime "available_end_time"
+    t.date     "available_start_time"
+    t.date     "available_end_time"
     t.integer  "user_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20160914083557) do
   create_table "job_alerts", force: :cascade do |t|
     t.integer  "job_categorie_id"
     t.integer  "user_id"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date     "start_date"
+    t.date     "end_date"
     t.string   "address"
     t.integer  "ski_resort_id"
     t.datetime "created_at",       null: false
