@@ -26,6 +26,7 @@ gem 'omniauth'
 gem 'omniauth-linkedin'
 gem 'pundit'
 gem 'bootstrap-datepicker-rails'
+gem 'momentjs-rails'
 
 group :production do
   gem 'rails_12factor'
