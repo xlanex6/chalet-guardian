@@ -27,6 +27,7 @@ gem 'omniauth-linkedin'
 gem 'pundit'
 gem 'bootstrap-datepicker-rails'
 gem 'rails-assets-momentjs', source: 'https://rails-assets.org'
+gem 'momentjs-rails'
 
 
 group :production do
