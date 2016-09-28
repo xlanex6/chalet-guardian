@@ -9,14 +9,18 @@
     </div>
     <div class="col-md-6 col-md-offset-3 text-center">
       <h3><%= @job_alert.job_categorie.name %></h3>
-      <p><em>from </em><%= @job_alert.user.company %></p>
-      <span class="timestring"><%= @job_alert.start_date %></span> -
-      <span class="timestring"><%= @job_alert.end_date %></span>
-      <p><%= @job_alert.address %></p>
-      <p><%= @job_alert.ski_resort.name %></p>
+      <div class="data-job">
+        <h3>
+          <span class="timestring"><%= @job_alert.start_date %></span> -
+          <span class="timestring"><%= @job_alert.end_date %></span>
+        </h3>
+        <h4>
+          <span class:'resort'><%= @job_alert.ski_resort.name %></span>
+        </h4>
+      </div>
       <p><%= @job_alert.description %></p>
-      <p>Post on : <%= @job_alert.created_at %></p>
-      <%= link_to 'Back to list', job_alerts_path, class: "btn btn-primary btn-xl"%>
+      <p><em><strong>- <%= @job_alert.user.first_name %> <%= @job_alert.user.last_name %></strong></em></p>
+      <%= link_to "I'M INTERRESTED", '#', class: 'btn btn-primary btn-xl'%>
     </div>
   </div>
 </div>
