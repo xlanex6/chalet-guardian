@@ -8,6 +8,9 @@ before_action :set_user, only: [:show, :edit]
   def edit
   end
 
+  def update
+  end
+
   private
 
 def set_user
