@@ -16,6 +16,7 @@
 </div>
 <div class="col-md-9">
   <div class="profile-content">
+    <%= link_to 'Edit my profil', edit_user_path, class: 'btn btn-primary' %>
     <h3><%=@user.first_name %> <%=@user.last_name %></h3>
     <p>Member since <span class="timestring"><%=@user.created_at %></span></p>
     <p><%=@user.description %></p>
