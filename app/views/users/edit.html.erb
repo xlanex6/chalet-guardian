@@ -1,0 +1,13 @@
+
+<%= simple_form_for @user, url: user_path, method: :patch do |f| %>
+
+<%= f.input :first_name %>
+<%= f.input :last_name %>
+<%= f.input :phone %>
+<%= f.input :company %>
+<%= f.input :website %>
+<%= f.input :description %>
+<%= f.input :job_categorie_id, collection: JobCategorie.all %>
+
+<%= f.button :submit, class:'btn'%>
+<% end %>
